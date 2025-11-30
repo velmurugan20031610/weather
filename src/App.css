@@ -1,38 +1,165 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "SF Pro Display", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  background: url("../public/bg.jpg/Gradient-Night-Sky-iphone-x.jpg") no-repeat center center/cover;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+/* MAIN APP CARD */
+.app {
+  width: 360px;
+  padding: 22px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(18px);
+  text-align: center;
+  box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.28);
+  animation: fade 0.4s ease-in-out;
 }
 
-@keyframes App-logo-spin {
+@keyframes fade {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: scale(0.96);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: scale(1);
   }
+}
+
+/* HEADING */
+.app h1 {
+  font-size: 26px;
+  margin-bottom: 18px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+/* SEARCH BAR */
+.search-box {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.search-box input {
+  width: 210px;
+  padding: 10px 14px;
+  border-radius: 15px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  color: #000; /* FIX: visible text */
+}
+
+/* placeholder fix */
+.search-box input::placeholder {
+  color: #333;
+  opacity: 0.8;
+}
+
+.search-box button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 15px;
+  background: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.search-box button:hover {
+  background: #e7e7e7;
+}
+
+/* ERROR TEXT */
+.error {
+  text-align: center;
+  color: rgb(255, 80, 80);
+  margin-bottom: 10px;
+}
+
+/* WEATHER RESULT CARD */
+.weather-card {
+  margin-top: 8px;
+  width: 100%;
+  padding: 22px;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(20px);
+  color: #000; /* FIX: main text visible */
+  animation: fade 0.3s ease-in-out;
+}
+
+/* ICON */
+.weather-icon {
+  width: 76px;
+  margin-bottom: 6px;
+}
+
+/* CITY NAME */
+.city {
+  font-size: 22px;
+  font-weight: 600;
+  margin-top: 5px;
+  color: #000; /* FIX */
+}
+
+/* TEMPERATURE */
+.temp {
+  font-size: 58px;
+  font-weight: 700;
+  margin: 8px 0;
+  color: #000; /* FIX */
+}
+
+/* DESCRIPTION */
+.desc {
+  font-size: 17px;
+  text-transform: capitalize;
+  opacity: 0.9;
+  margin-bottom: 14px;
+  color: #333; /* FIX */
+}
+
+/* DETAILS SECTION */
+.details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.details div {
+  width: 48%;
+  background: rgba(255, 255, 255, 0.35);
+  padding: 12px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+}
+
+/* LABELS (Humidity / Wind) */
+.details h4 {
+  font-size: 13px;
+  opacity: 0.7;
+  color: #333; /* FIX */
+}
+
+/* VALUES */
+.details p {
+  font-size: 17px;
+  font-weight: 600;
+  color: #000; /* FIX */
 }
